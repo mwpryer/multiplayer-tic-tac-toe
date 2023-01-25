@@ -6,10 +6,9 @@
   "license": "ISC",
   "author": "Matt Pryer <mwpryer@gmail.com>",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && cd client && npm install && npm run build",
     "client": "npm run dev --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "tsc && cd client && npm install && npm run build ",
     "server": "nodemon src/index.ts",
     "start": "node dist/index.js"
   },
